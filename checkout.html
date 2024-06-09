@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Credit Card Form</title>
+  <link rel="stylesheet" href="checkout.css">
+  <script src="https://unpkg.com/imask"></script>
+</head>
+
+<body>
+  <div class="wrapper">
+    <h2 class="title">CHECKOUT</h2>
+    <form class="input-form">
+      <div class="items">
+        <label class="label"><b>Card Number</b></label>
+        <input class="input" type="text" data-mask="0000 0000 0000 0000"
+          oninput="this.value = this.value.replace(/[^0-9]/g, '')" placeholder="Enter card number" required>
+      </div>
+      <div class="items">
+        <label class="label"><b>Card Holder</b></label>
+        <input class="input" type="text" oninput="this.value = this.value.replace(/[^a-zA-Z.\s]/g, '')"
+          placeholder="Enter card holder" required>
+      </div>
+      <div class="items">
+        <label class="label"><b>Address</b></label>
+        <input class="input" type="text" placeholder="Enter full address" required>
+      </div>
+      <div class="section-3">
+        <div class="items">
+          <label class="label"><b>Expiry Date</b></label>
+          <input class="input expiry-date" type="month" placeholder="Select expiry date" required>
+        </div>
+        <div class="items">
+          <label class="label"><b>CVV</b></label>
+          <div class="cvv">
+            <div class="tooltip">?</div>
+            <div class="cvv-img">
+              <img src="cvv.png" alt="CVV">
+            </div>
+            <input class="input" type="text" pattern="\d{4}"
+              oninput="this.value = this.value.replace(/[^0-9]/g, '').substring(0, 4)" placeholder="Enter CVV" required>
+          </div>
+        </div>
+      </div>
+      <div style="display: flex; justify-content: center;">
+        <button class="btn" type="submit">Submit
+          <a href="confirmation.html"></a>
+        </button>
+        </a>
+      </div>
+    </form>
+  </div>
+</body>
+<script>
+  const cardNumberInput = document.querySelector('input[data-mask="0000 0000 0000 0000"]');
+  const maskOptions = {
+    mask: '0000 0000 0000 0000'
+  };
+  const mask = IMask(cardNumberInput, maskOptions);
+</script>
+
+<script>
+  // Function to handle form submission
+  function handleSubmit(event) {
+    event.preventDefault(); // Prevent form submission
+
+    // Get input values
+    var cardNumber = document.querySelector('input[data-mask="0000 0000 0000 0000"]').value;
+    var cardHolder = document.querySelector('input[type="text"][placeholder="Enter card holder"]').value;
+    var address = document.querySelector('input[type="text"][placeholder="Enter full address"]').value;
+    var expiryDate = document.querySelector('input.expiry-date').value;
+    var cvv = document.querySelector('input[type="text"][placeholder="Enter CVV"]').value;
+
+    // Check if all inputs are filled
+    if (cardNumber && cardHolder && address && expiryDate && cvv) {
+      // Store data in localStorage
+      localStorage.setItem('cardNumber', cardNumber);
+      localStorage.setItem('cardHolder', cardHolder);
+      localStorage.setItem('address', address);
+
+      // Redirect to confirmation page
+      window.location.href = 'confirmation.html';
+    } else {
+      alert('Please fill in all the required fields.');
+    }
+  }
+
+  // Add event listener to the form submit button
+  var submitButton = document.querySelector('.btn');
+  submitButton.addEventListener('click', handleSubmit);
+</script>
+
+</html>

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANIMerchHaven</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+</head>
+
+<body>
+    <div class="header">
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <img src="images/logo.png" width="125px">
+                </div>
+                <nav>
+                    <ul id="MenuItems">
+                        <li><a href="products.html">ALL PRODUCTS</a></li>
+                        <li><a href="products4.html">APPAREL</a></li>
+                        <li><a href="products3.html">ACCESSORIES</a></li>
+                        <li><a href="products2.html">COLLECTIBLES</a></li>
+                    </ul>
+                </nav>
+                <a href="cart.html"><img src="images/cart.png" width="30px" height="30px" style="color: white;"></a>
+                <img src="images/menu.png" class="menu-icon" onclick="menutoggle()">
+                <span id="cartCounter" class="cart-counter" style="color: white;">0</span>
+            </div>
+        </div>
+    </div>
+    <div class="homepageimage">
+        <a href="products.html">
+            <img src="images/image1.png" width="1349px" height="340px">
+        </a>
+    </div>
+
+    <!------------Changing Banner-------------->
+    <div class="bannernew">
+        <a href="products.html">
+            <img src="" width="1349px" height="650px" id="image">
+        </a>
+    </div>
+    <!--------- featured categories --------->
+    <div class="featurings">
+        <br>
+        <div class="categories">
+            <div class="small-container">
+                <div class="row">
+                    <div class="col-3">
+                        <a href="products-details.html">
+                            <img src="images/My project.png">
+                        </a>
+                    </div>
+                    <div class="col-3">
+                        <a href="products-details2.html">
+                        <img src="images/My project (1).png">
+                        </a>
+                    </div>
+                    <div class="col-3">
+                        <a href="products-details3.html">
+                        <img src="images/My project (2).png">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <br>
+            <br>
+        </div>
+    </div>
+    <!--------- featured products --------->
+    <div class="featureprod">
+        <div class="small-container">
+            <br>
+            <h2 class="title">Featured Products</h2>
+            <div class="row">
+                <div class="col-4">
+                    <a href="products-details15.html"><img src="images/15.png">
+                    </a>
+                    <h4> Eren Figurine </h4>
+                    
+                    <p>500 Pesos</p>
+                </div>
+
+                <div class="col-4">
+                    <a href="products-details16.html"><img src="images/16.png"></a>
+                    <h4> Mikasa Figurine </h4>
+                   
+                    <p>500 Pesos</p>
+                </div>
+
+                <div class="col-4">
+                    <a href="products-details13.html"><img src="images/13.png"></a>
+                    <h4> Anime Robot </h4>
+                   
+                    <p>699 Pesos</p>
+                </div>
+
+                <div class="col-4">
+                    <a href="products-details14.html"><img src="images/14.png"></a>
+                    <h4>Anime School Girl Figurine</h4>
+                   
+                    <p>499 Pesos</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-----------  offer   ---------->
+
+
+    <div class="offer">
+        <div class="small-container">
+            <div class="row">
+                <div class="col-2">
+                    <img src="images/6.png" class="offer-img">
+                </div>
+                <div class="col-2">
+                    <p>Exclusively Available on ANIMerchHaven</p>
+                    <h1> Gilgamesh Limited Edition </h1>
+                    <small>
+                        Get it today so you wont regret it.<br>
+                    </small>
+                    <a href="products-details6.html" class="btn">Buy Now &#10140</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+   
+
+    <!--------------footer------------------>
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col-1">
+                    <h3>Download Our App</h3>
+                    <p>Download App for Android and Ios Mobile Phone</p>
+                    <div class="app-logo">
+                        <a href="https://play.google.com/" target="_blank"><img src="images/play-store.png"></a>
+                        <a href="https://apps.apple.com/" target="_blank"><img src="images/app-store.png"></a>
+                    </div>
+                </div>
+                <div class="footer-col-2">
+                    <img src="images/logo.png">
+                    <p>Our purpose is to sustainably make the pleasure and benefits of sports accessible to the many
+                    </p>
+                </div>
+                
+                <div class="footer-col-4">
+                    <h3>Follow Us</h3>
+                    <ul>
+                        <li><a href="https://facebook.com" target="_blank">facebook</a></li>
+                        <li><a href="https://Twitter.com"target="_blank">Twitter</a></li>
+                        <li><a href="https://Instagram.com"target="_blank">Instagram</a><li>
+                        <li><a href="https://Instagram.com"target="_blank">YouTube</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!----------JS FOR TOGGLE MENU---------->
+    <script>
+        var MenuItems = document.getElementById("MenuItems");
+
+        MenuItems.style.maxHeight = "0px";
+
+        function menutoggle() {
+            if (MenuItems.style.maxHeight == "0px") {
+                MenuItems.style.maxHeight = "200px";
+            } else {
+                MenuItems.style.maxHeight = "0px";
+            }
+        }
+    </script>
+
+    <script type="text/javascript">
+        let image = document.getElementById('image');
+        let images = ['images/new banner.jpeg', 'images/new banner2.jpg', 'images/banner3.jpg', 'images/banner4.jpg'];
+        let lastIndex = -1;
+
+        // Display initial image
+        let random;
+        do {
+            random = Math.floor(Math.random() * images.length);
+        } while (random === lastIndex);
+        lastIndex = random;
+        image.src = images[random];
+        image.style.opacity = 1;
+
+        setInterval(function () {
+            image.style.opacity = 0;
+            setTimeout(function () {
+                do {
+                    random = Math.floor(Math.random() * images.length);
+                } while (random === lastIndex);
+                lastIndex = random;
+                image.src = images[random];
+                image.style.opacity = 1;
+            }, 500);
+        }, 5000);
+    </script>
+
+    <script>
+        window.onscroll = function () {
+            stickyNavbar()
+        };
+
+        var navbar = document.querySelector(".navbar");
+
+        function stickyNavbar() {
+            if (window.pageYOffset > 0) {
+                navbar.classList.add("sticky");
+            } else {
+                navbar.classList.remove("sticky");
+            }
+        }
+    </script>
+
+
+
+<script>
+    // Function to update the cart counter
+    function updateCartCounter() {
+      var cartData = JSON.parse(localStorage.getItem('cartData')) || [];
+      var cartCounter = document.getElementById('cartCounter');
+      var cartCount = cartData.length;
+  
+      if (cartCount > 0) {
+        cartCounter.textContent = cartCount;
+        cartCounter.style.display = 'block'; // Show the cart counter
+      } else {
+        cartCounter.style.display = 'none'; // Hide the cart counter
+      }
+    }
+  
+    // Call the updateCartCounter function when the page loads
+    updateCartCounter();
+  </script>
+  
+</body>
+
+</html>

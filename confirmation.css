@@ -1,0 +1,314 @@
+ /* Existing CSS styles */
+
+    /* Additional CSS for the confirmation page */
+
+    .btn {
+      background: #ff523b;
+      color: #fff;
+      font-size: 1.25em;
+      padding: 10px 30px;
+      text-align: center;
+      text-transform: uppercase;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      letter-spacing: 2px;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .btn:hover {
+      background: #ff523b;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
+      transform: translateY(-2px);
+    }
+
+    .btn:active {
+      transform: translateY(0px);
+      background: #79261c;
+    }
+
+    .btn:focus {
+      outline: none;
+    }
+
+
+
+    .wrapper {
+      width: 80%;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    #productsTable {
+      width: 100%;
+    }
+
+    #productsTable th,
+    #productsTable td {
+      text-align: center;
+    }
+
+    .product-image {
+      display: flex;
+      justify-content: center;
+    }
+
+    .product-info {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .product-name {
+      margin: 0;
+      max-width: 200px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .product-quantity {
+      margin-top: 5px;
+      text-align: center;
+    }
+
+    body {
+      background: url(darkbackground.jpg);
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      font-family: 'Open Sans', sans-serif;
+    }
+
+    .wrapper {
+      max-width: 500px;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.425);
+      border-radius: 10px;
+      backdrop-filter: blur(10px);
+      padding: 40px;
+      animation: fadeIn 0.5s ease;
+    }
+
+    .title {
+      color: #ffffff;
+      font-size: 2em;
+      text-align: center;
+      text-transform: uppercase;
+      font-weight: 900;
+      margin-bottom: 20px;
+      letter-spacing: 2px;
+      transform: scale(1.05);
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      animation: titleScale 0.5s ease;
+    }
+
+    .input-form .label {
+      display: block;
+      font-size: 18px;
+      color: #212121;
+      text-transform: capitalize;
+      margin-bottom: 8px;
+    }
+
+    .input-form .items {
+      margin-bottom: 20px;
+      animation: slideInBottom 0.5s ease;
+    }
+
+    .input-form .items .input {
+      background: transparent;
+      border: none;
+      border-bottom: 2px solid #bdbdbd;
+      width: 100%;
+      padding: 10px;
+      font-size: 1em;
+      color: #212121;
+      position: relative;
+      transition: border-color 0.3s ease;
+    }
+
+    .input-form .items .input:focus {
+      border-color: #ff523b;
+      outline: none;
+    }
+
+    .input-form .items .input:focus::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -2px;
+      width: 100%;
+      height: 2px;
+      background-color: #ff523b;
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+
+    .input-form .items .input:focus::after {
+      transform: scaleX(1);
+    }
+
+    .input-form .items .input:focus::placeholder {
+      color: transparent;
+    }
+
+    .input-form .items .input:focus::-webkit-input-placeholder {
+      color: transparent;
+    }
+
+    .input-form .section-3 {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .input-form .section-3 .items {
+      width: 48%;
+    }
+
+    .btn {
+      background: #ff523b;
+      color: #fff;
+      font-size: 1.25em;
+      padding: 10px 30px;
+      text-align: center;
+      text-transform: uppercase;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      letter-spacing: 2px;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .btn:hover {
+      background: #ff523b;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
+      transform: translateY(-2px);
+    }
+
+    .btn:active {
+      transform: translateY(0px);
+      background: #79261c;
+    }
+
+    .btn:focus {
+      outline: none;
+    }
+
+    .cvv {
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    .cvv .tooltip {
+      position: absolute;
+      top: -12px;
+      right: 0;
+      color: #d4d4d4;
+      border: 2px solid #d4d4d4;
+      border-radius: 50%;
+      width: 25px;
+      height: 25px;
+      line-height: 25px;
+      text-align: center;
+      cursor: pointer;
+    }
+
+    .cvv .cvv-img {
+      position: absolute;
+      top: -100%;
+      right: 0;
+      background: #5f6c7d;
+      padding: 12px;
+      border-radius: 5px;
+      display: none;
+      z-index: 1;
+      animation: slideInRight 0.5s ease;
+    }
+
+    .cvv .cvv-img img {
+      width: 100px;
+      height: auto;
+      display: block;
+    }
+
+    .cvv:hover .cvv-img {
+      display: block;
+    }
+
+    ::placeholder {
+      color: rgba(255, 255, 255, 0.562);
+    }
+
+    .input-form .items .input:focus::placeholder-shown {
+      color: transparent;
+    }
+
+    .input-form .items .input:focus::-webkit-input-placeholder {
+      color: transparent;
+    }
+
+    .customer-details {
+      background-color: #f2f2f2;
+      padding: 20px;
+    }
+
+    .section-title {
+      margin-top: 0;
+    }
+
+    .card-number,
+    .card-holder,
+    .address {
+      margin: 0;
+    }
+
+    .card-number span,
+    .card-holder span,
+    .address span {
+      font-weight: bold;
+    }
+
+    @media only screen and (max-width: 600px) {
+      .wrapper {
+        width: 90%;
+      }
+
+      .product-details {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .product-image img {
+        margin-bottom: 10px;
+      }
+    }
+
+    @media screen and (max-width: 460px) {
+      .input-form .section-3 {
+        flex-direction: column;
+      }
+
+      .input-form .section-3 .items {
+        width: 100%;
+      }
+
+      .input-form .items {
+        margin-bottom: 10px;
+      }
+
+      .input-form {
+        margin-bottom: 15px;
+      }
+
+      .title {
+        font-size: 1.5em;
+        margin-bottom: 15px;
+      }
+    }

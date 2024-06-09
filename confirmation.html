@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Confirmation</title>
+  <link rel="stylesheet" href="confirmation.css">
+</head>
+
+<body>
+  <div class="wrapper">
+    <h2 class="title">ORDER CONFIRMATION</h2>
+    <div class="confirmation-info">
+      <h3>Card Information</h3>
+      <p><strong>Card Number:</strong> <span id="cardNumber"></span></p>
+      <p><strong>Card Holder:</strong> <span id="cardHolder"></span></p>
+    </div>
+    <div class="confirmation-info">
+      <h3>Shipping Address</h3>
+      <p><strong>Address:</strong> <span id="address"></span></p>
+    </div>
+    <div class="confirmation-info">
+      <h3>Ordered Products</h3>
+      <table id="productsTable">
+        <thead>
+          <tr>
+            <th>Image</th>
+            <th>Product</th>
+            <th>Quantity</th>
+          </tr>
+        </thead>
+        <tbody id="productsBody">
+          <!-- Product details will be dynamically added here -->
+        </tbody>
+      </table>
+      <div id="summary">
+        <p><strong>Total:</strong> $<span id="total"></span></p>
+      </div>
+      <!-- Add the button inside the wrapper -->
+      <div style="display: flex; justify-content: center; margin-top: 20px;">
+        <button class="btn" onclick="showPopup()"> Confirm Purchase </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function displayConfirmation() {
+  var cardNumber = localStorage.getItem('cardNumber');
+  var cardHolder = localStorage.getItem('cardHolder');
+  var address = localStorage.getItem('address');
+  var products = JSON.parse(localStorage.getItem('cartData')) || [];
+
+  document.getElementById('cardNumber').textContent = cardNumber;
+  document.getElementById('cardHolder').textContent = cardHolder;
+  document.getElementById('address').textContent = address;
+
+  var productsBody = document.getElementById('productsBody');
+  var total = 0;
+
+  for (var i = 0; i < products.length; i++) {
+    var product = products[i];
+
+    var row = document.createElement('tr');
+    var imageCell = document.createElement('td');
+    var productCell = document.createElement('td');
+    var quantityCell = document.createElement('td');
+
+    var image = document.createElement('img');
+    image.src = product.image;
+    image.alt = product.name;
+    image.width = 50;
+    image.classList.add('product-image');
+    imageCell.appendChild(image);
+
+    var productInfo = document.createElement('div');
+    productInfo.classList.add('product-info');
+
+    var productName = document.createElement('span');
+    productName.textContent = product.name;
+    productName.classList.add('product-name');
+    productInfo.appendChild(productName);
+
+    var productSize = document.createElement('span');
+    productSize.textContent = product.size;
+    productSize.classList.add('product-size');
+    productInfo.appendChild(productSize);
+
+    productCell.appendChild(productInfo);
+
+    var productQuantity = document.createElement('span');
+    productQuantity.textContent = product.quantity;
+    productQuantity.classList.add('product-quantity');
+    quantityCell.appendChild(productQuantity);
+
+    row.appendChild(imageCell);
+    row.appendChild(productCell);
+    row.appendChild(quantityCell);
+    productsBody.appendChild(row);
+
+    total += parseFloat(product.subtotal);
+  }
+
+  var shippingFee = 69; // Assuming a fixed shipping fee of 69 units
+  var mainTotal = total + shippingFee;
+
+  document.getElementById('total').textContent = mainTotal.toFixed(2);
+}
+
+// Call the displayConfirmation function when the page loads
+displayConfirmation();
+
+    function showPopup() {
+      alert('Ordered successfully! Thank you for shopping with us!');
+      localStorage.removeItem('cartData');
+      window.location.href = 'index.html';
+    }
+  </script>
+
+</body>
+
+</html>
